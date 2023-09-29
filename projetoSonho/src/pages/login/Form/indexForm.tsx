@@ -1,4 +1,6 @@
 import { useState } from "react"
+import Input from "../Input/indexInput";
+import { Container, Global } from "@/@global/global";
 
 export default function Form () {
 
@@ -10,9 +12,13 @@ export default function Form () {
 
     return(
         <>  
-        
-        
-        
+            <Global/>
+            <Container>
+                <Input id='email' label="Email" type="email" value={email} onChange={e => setEmail(e.target.value)}
+                hasError={!emailRegex.test(email)}/>
+                <Input id="password" label='Password' type={showPassword? 'text': 'password' } value={password}
+                onChange={(e => setPasword (e.target.value))}/>
+            </Container>
         </>
             
         

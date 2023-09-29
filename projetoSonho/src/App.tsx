@@ -1,3 +1,4 @@
+import { Form } from 'react-router-dom'
 import Router from './config/router'
 import GlobalStyles from '@/assets/styles/global-styles'
 
@@ -8,6 +9,7 @@ function App() {
     <>
       <GlobalStyles />
       <Router/>
+      
     </>
   )
 }

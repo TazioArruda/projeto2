@@ -1,16 +1,17 @@
 import { DetailedHTMLProps, InputHTMLAttributes, ReactElement, useState } from "react"
 import { StyledDiv, StyledIcon, StyledInput, StyledLabel } from "../style/input"
 
-interface CompProps extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
-    label:string
-    id: string
-    hasError?:boolean
-    icon?:ReactElement
+interface PropsComp extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
+    label:string,
+    id: string,
+    hasError?:boolean,
+    icon?:ReactElement,
     onIcon?:() => void
+
     
 }
 
-export default function Input ({label, id, hasError, icon, onIcon, ...props}:CompProps) {
+export default function Input ({label, id, hasError, icon, onIcon, ...props}:PropsComp) {
 
     const classis = [
         props.value? 'active': '',
@@ -20,7 +21,7 @@ export default function Input ({label, id, hasError, icon, onIcon, ...props}:Com
     return(
         <>  
             <StyledDiv className={classis.join('')}>
-                <StyledInput {...props} id={id} placeholder="Insira seu e-mail"/> 
+                <StyledInput id={id} placeholder="Digite aqui" {...props}/> 
                 <StyledLabel htmlFor={id}>{label}</StyledLabel>
 
                 {icon &&(
