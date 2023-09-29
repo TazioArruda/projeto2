@@ -5,11 +5,12 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Home from '@/pages/home'
 import Contact from '@/pages/contact'
 import { Spinner } from '@/components/ui'
+import Login from '@/pages/login/Indexlogin'
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Home />
+    element: <Login />
   },
   {
     path: '/contact',
